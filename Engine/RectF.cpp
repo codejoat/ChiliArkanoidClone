@@ -16,7 +16,7 @@ RectF::RectF (const Vec2& top_left, const Vec2& bottom_right)
 
 RectF::RectF (const Vec2& top_left, float (width), float (height))
 {
-	RectF (top_left, Vec2 (width, height));
+	RectF (top_left, top_left + Vec2 (width, height));
 }
 
 bool RectF::IsOverlapping (const RectF& other) const

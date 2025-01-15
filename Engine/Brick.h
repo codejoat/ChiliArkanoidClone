@@ -8,7 +8,7 @@ class Brick
 {
 public:
 	Brick (const RectF& set_rect, const Color& set_color);
-	void DrawBrick (Graphics& gfx) const;
+	void Draw (Graphics& gfx) const;
 
 private:
 	RectF rect;
