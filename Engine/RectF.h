@@ -11,6 +11,7 @@ public:
 	RectF (const Vec2& top_left, float (width), float(height));
 	bool IsOverlappingWith (const RectF& other) const;
 	static RectF FromCenter (const Vec2& center, float half_width, float half_height);
+	RectF GetExpanded (float offset) const;
 
 public:
 	float left;   // refers to top left of x

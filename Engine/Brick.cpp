@@ -10,7 +10,7 @@ Brick::Brick (const RectF& set_rect, const Color& set_color)
 void Brick::Draw (Graphics& gfx) const
 {
 	if(!destroyed) {
-		gfx.DrawRect (rect, color);
+		gfx.DrawRect (rect.GetExpanded( -padding), color);
 	}
 }
 
