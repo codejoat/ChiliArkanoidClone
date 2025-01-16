@@ -11,7 +11,10 @@ public:
 	Ball (const Vec2& set_position, const Vec2& set_velocity);
 	void Draw (Graphics& gfx) const;
 	void Update (float dt);
-	bool WallCollisions (RectF walls);
+	bool DoWallCollisions (const RectF& walls);
+	void ReboundX ();
+	void ReboundY ();
+	RectF GetRect () const;
 
 private:
 	static constexpr float radius = 7.0f;
