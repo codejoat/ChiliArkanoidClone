@@ -40,7 +40,7 @@ Game::Game (MainWindow& wnd)
 		Colors::Green
 	};
 
-	const Vec2 top_left (0.0f, 0.0f);
+	const Vec2 top_left (40.0f, 40.0f);
 
 	int index = 0;
 	for(int y = 0; y < n_bricks_down; ++y) {
