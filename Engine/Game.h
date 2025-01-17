@@ -59,5 +59,7 @@ private:
 	RectF walls;
 	Sound sound_pad;
 	Sound sound_brick;
+	bool game_over = false;
+	bool game_begin = false;
 	/********************************/
 };

@@ -9,12 +9,16 @@ Ball::Ball (const Vec2& set_position, const Vec2& set_velocity)
 
 void Ball::Draw (Graphics& gfx) const
 {
-	SpriteCodex::DrawBall (position, gfx);
+	if(!bottom_collision) {
+		SpriteCodex::DrawBall (position, gfx);
+	}
 }
 
 void Ball::Update (float dt)
 {
-	position += velocity * dt;
+	if(!bottom_collision) {
+		position += velocity * dt;
+	}
 }
 
 bool Ball::DoWallCollisions (const RectF& walls)
@@ -37,7 +41,7 @@ bool Ball::DoWallCollisions (const RectF& walls)
 		collided = true;
 	} else if(rect.bottom > walls.bottom) {
 		position.y -= rect.bottom - walls.bottom;
-		ReboundY ();
+		bottom_collision = true;
 		collided = true;
 	}
 	return collided;
@@ -66,4 +70,9 @@ Vec2 Ball::GetVelocity () const
 Vec2 Ball::GetPosition () const
 {
 	return position;
+}
+
+bool Ball::BottomCollision () const
+{
+	return bottom_collision;
 }
