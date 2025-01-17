@@ -18,6 +18,7 @@ public:
 	Vec2 GetVelocity () const;
 	Vec2 GetPosition () const;
 	bool BottomCollision () const;
+	void StartVelocity ();
 
 private:
 	static constexpr float radius = 7.0f;

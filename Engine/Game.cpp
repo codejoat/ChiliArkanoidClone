@@ -25,7 +25,7 @@ Game::Game (MainWindow& wnd)
 	:
 	wnd (wnd),
 	gfx (wnd),
-	ball (Vec2 (400.0f, 485.0f), Vec2 (300.0f, 300.0f)),
+	ball (Vec2 (400.0f, 485.0f), Vec2 (0.0f, 0.0f)),
 	walls (0.0f, float (gfx.ScreenWidth), 0.0f, float (gfx.ScreenHeight)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
@@ -76,6 +76,13 @@ void Game::UpdateModel (float dt)
 	} else {
 		if(ball.BottomCollision ()) {
 			game_over = true;
+			game_started = false;
+		}
+		if(!game_started) {
+			if(wnd.kbd.KeyIsPressed (VK_SPACE)) {
+				ball.StartVelocity ();
+				game_started = true;
+			}
 		}
 
 		paddle.Update (wnd.kbd, dt);

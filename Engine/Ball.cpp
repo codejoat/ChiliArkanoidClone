@@ -76,3 +76,8 @@ bool Ball::BottomCollision () const
 {
 	return bottom_collision;
 }
+
+void Ball::StartVelocity ()
+{
+	velocity = Vec2 (300.0f, 300.0f);
+}

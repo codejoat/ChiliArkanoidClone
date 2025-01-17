@@ -61,5 +61,6 @@ private:
 	Sound sound_brick;
 	bool game_over = false;
 	bool game_begin = false;
+	bool game_started = false;
 	/********************************/
 };
