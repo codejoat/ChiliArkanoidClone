@@ -29,7 +29,7 @@ Game::Game (MainWindow& wnd)
 	walls (0.0f, float (gfx.ScreenWidth), 0.0f, float (gfx.ScreenHeight)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
-	paddle(Vec2(400.0f, 500.0f), 50.0f, 15.0f)
+	paddle(Vec2(400.0f, 500.0f), 45.0f, 7.5f)
 {
 	const Color colors[6] =
 	{	Colors::Gray,
@@ -55,24 +55,47 @@ Game::Game (MainWindow& wnd)
 
 void Game::Go()
 {
-	gfx.BeginFrame();	
-	UpdateModel();
+	gfx.BeginFrame();
+	float elapsed_time = ft.Mark ();	
+	while(elapsed_time > 0.0f) {
+		const float dt = std::min (0.0025f, elapsed_time);
+		UpdateModel (dt);
+		elapsed_time -= dt;
+	}
+	
 	ComposeFrame();
 	gfx.EndFrame();
 }
 
-void Game::UpdateModel()
+void Game::UpdateModel (float dt)
 {
-	const float dt = ft.Mark ();
 	paddle.Update (wnd.kbd, dt);
 	paddle.DoWallCollision (walls);
 	ball.Update (dt);
 
-	for(Brick& brick : bricks) {
-		if(brick.DoBallCollision (ball)) {
-			sound_brick.Play ();
-			break;
+	bool collision_happened = false;
+	float current_collision_distance_squared = 0.0f;
+	int current_collision_index = 0;
+	for(int i = 0; i < n_bricks; ++i) {
+		if(bricks[i].CheckBallCollision (ball)) {
+			const float new_collision_distance_squared = (ball.GetPosition () - bricks[i].GetCenter ()).GetLengthSq ();
+			if(collision_happened) {
+				if(new_collision_distance_squared < current_collision_distance_squared) {
+					current_collision_distance_squared = new_collision_distance_squared;
+					current_collision_index = i;
+				}
+			} else {
+				current_collision_distance_squared = new_collision_distance_squared;
+				current_collision_index = i;
+				collision_happened = true;
+			}
 		}
+	}
+
+	if(collision_happened) {
+		paddle.ResetCooldown ();
+		bricks[current_collision_index].ExecuteBallCollision (ball);
+		sound_brick.Play ();
 	}
 
 	if(paddle.DoBallCollision (ball)) {
@@ -81,6 +104,7 @@ void Game::UpdateModel()
 
 
 	if(ball.DoWallCollisions (walls)) {
+		paddle.ResetCooldown ();
 		sound_pad.Play ();
 	}
 	
