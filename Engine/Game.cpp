@@ -25,12 +25,15 @@ Game::Game (MainWindow& wnd)
 	:
 	wnd (wnd),
 	gfx (wnd),
-	ball (Vec2 (400.0f, 485.0f), Vec2 (0.0f, 0.0f)),
 	walls (0.0f, float (gfx.ScreenWidth), 0.0f, float (gfx.ScreenHeight)),
+	ball (Vec2 ((paddle.GetRect ().left + paddle.GetRect ().right) / 2,
+		(paddle.GetRect ().top) - 7.0f), Vec2 (0.0f, 0.0f)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
 	paddle(Vec2(400.0f, 500.0f), 45.0f, 7.5f)
 {
+	
+
 	const Color colors[6] =
 	{	Colors::Gray,
 		Colors::Red,
@@ -86,7 +89,12 @@ void Game::UpdateModel (float dt)
 		}
 
 		paddle.Update (wnd.kbd, dt);
+		if(!game_started) {
+			ball.RidePaddle (Vec2 ((paddle.GetRect ().left + paddle.GetRect ().right) / 2,
+				(paddle.GetRect ().top) - 7.0f));
+		}
 		paddle.DoWallCollision (walls);
+		
 		ball.Update (dt);
 
 		bool collision_happened = false;
@@ -132,7 +140,9 @@ void Game::ComposeFrame()
 		for(const Brick& brick : bricks) {
 			brick.Draw (gfx);
 		}
-		ball.Draw (gfx);
+		if(game_begin) {
+			ball.Draw (gfx);
+		}
 		paddle.Draw (gfx);
 	}
 }

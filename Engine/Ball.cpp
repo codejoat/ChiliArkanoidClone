@@ -42,7 +42,6 @@ bool Ball::DoWallCollisions (const RectF& walls)
 	} else if(rect.bottom > walls.bottom) {
 		position.y -= rect.bottom - walls.bottom;
 		bottom_collision = true;
-		collided = true;
 	}
 	return collided;
 }
@@ -75,6 +74,11 @@ Vec2 Ball::GetPosition () const
 bool Ball::BottomCollision () const
 {
 	return bottom_collision;
+}
+
+void Ball::RidePaddle (const Vec2& set_position)
+{
+	position = set_position;
 }
 
 void Ball::StartVelocity ()

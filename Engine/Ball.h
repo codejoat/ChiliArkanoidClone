@@ -18,6 +18,7 @@ public:
 	Vec2 GetVelocity () const;
 	Vec2 GetPosition () const;
 	bool BottomCollision () const;
+	void RidePaddle (const Vec2& set_position);
 	void StartVelocity ();
 
 private:
