@@ -33,7 +33,7 @@ bool Ball::DoWallCollisions (const RectF& walls)
 
 	if(rect.top < walls.top) {
 		position.y += walls.top - rect.top;
-		ReboundY ();
+		ReboundY (0);
 		collided = true;
 	} else if(rect.bottom > walls.bottom) {
 		position.y -= rect.bottom - walls.bottom;
@@ -47,9 +47,14 @@ void Ball::ReboundX ()
 	velocity.x = -velocity.x;
 }
 
-void Ball::ReboundY ()
+void Ball::ReboundY (int way)
 {
 	velocity.y = -velocity.y;
+	if(way == 2 && velocity.x < 0.0f) {
+		ReboundX ();
+	} else if(way == 1 && velocity.x > 0.0f) {
+		ReboundX ();
+	}
 }
 
 RectF Ball::GetRect () const
@@ -80,7 +85,7 @@ void Ball::RidePaddle (const Vec2& set_position)
 void Ball::StartBall ()
 {
 	bottom_collision = false;
-	velocity = Vec2 (300.0f, 300.0f);
+	velocity = Vec2 (100.0f, 100.0f);
 }
 
 void Ball::ZeroVelocity ()

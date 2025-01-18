@@ -21,13 +21,23 @@ void Paddle::Draw (Graphics& gfx) const
 bool Paddle::DoBallCollision (Ball& ball)
 {
    if(!is_cooldown) {
+      int way = 0; // TODO change way to offset and finish velocity changes
       const RectF rect = GetRect ();
       if(rect.IsOverlappingWith (ball.GetRect ())) {
          const Vec2 ball_position = ball.GetPosition ();
+         if(ball_position.x > position.x) {
+            way = 2;
+         } else if(ball_position.x < position.x) {
+            way = 1;
+         } else {
+            way = 0;
+         }
+         
+         
          if(std::signbit (ball.GetVelocity ().x) == std::signbit ((ball_position - position).x)) {
-            ball.ReboundY ();
+            ball.ReboundY (way);
          } else if(ball_position.x >= rect.left && ball_position.x <= rect.right) {
-            ball.ReboundY ();
+            ball.ReboundY (way);
          } else {
             ball.ReboundX ();
          }
