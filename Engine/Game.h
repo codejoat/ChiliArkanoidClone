@@ -28,6 +28,7 @@
 #include "Sound.h"
 #include "Brick.h"
 #include "Paddle.h"
+#include "Lives.h"
 
 class Game
 {
@@ -55,6 +56,7 @@ private:
 	FrameTimer ft;
 	Paddle paddle;
 	Ball ball;
+	Lives life;
 	Brick bricks[n_bricks];
 	RectF walls;
 	Sound sound_pad;

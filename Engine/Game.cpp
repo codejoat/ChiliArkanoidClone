@@ -30,7 +30,8 @@ Game::Game (MainWindow& wnd)
 		(paddle.GetRect ().top) - 7.0f), Vec2 (0.0f, 0.0f)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
-	paddle(Vec2(400.0f, 500.0f), 45.0f, 7.5f)
+	paddle(Vec2(400.0f, 500.0f), 45.0f, 7.5f),
+	life (Vec2 (15.0f, 577.5f), 45.0f, 7.5f)
 {
 	
 
@@ -144,5 +145,6 @@ void Game::ComposeFrame()
 			ball.Draw (gfx);
 		}
 		paddle.Draw (gfx);
+		life.Draw (gfx);
 	}
 }
