@@ -8,6 +8,7 @@
 class Lives
 {
 public:
+	Lives () = default;
 	Lives (const Vec2& set_position, float width, float height);
 	void Draw (Graphics& gfx) const;
 	RectF GetRect () const;

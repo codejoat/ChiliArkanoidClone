@@ -8,6 +8,7 @@
 class Ball
 {
 public:
+	Ball () = default;
 	Ball (const Vec2& set_position, const Vec2& set_velocity);
 	void Draw (Graphics& gfx) const;
 	void Update (float dt);
@@ -17,9 +18,10 @@ public:
 	RectF GetRect () const;
 	Vec2 GetVelocity () const;
 	Vec2 GetPosition () const;
-	bool BottomCollision () const;
+	bool CheckBottomCollision () const;
 	void RidePaddle (const Vec2& set_position);
-	void StartVelocity ();
+	void StartBall ();
+	void ZeroVelocity ();
 
 private:
 	static constexpr float radius = 7.0f;

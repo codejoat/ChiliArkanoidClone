@@ -30,8 +30,7 @@ Game::Game (MainWindow& wnd)
 		(paddle.GetRect ().top) - 7.0f), Vec2 (0.0f, 0.0f)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
-	paddle(Vec2(400.0f, 500.0f), 45.0f, 7.5f),
-	life (Vec2 (15.0f, 577.5f), 45.0f, 7.5f)
+	paddle(Vec2(400.0f, 500.0f), paddle_width, paddle_height)
 {
 	
 
@@ -44,16 +43,22 @@ Game::Game (MainWindow& wnd)
 		Colors::Green
 	};
 
-	const Vec2 top_left (40.0f, 40.0f);
+	const Vec2 brick_top_left (40.0f, 40.0f);
 
 	int index = 0;
 	for(int y = 0; y < n_bricks_down; ++y) {
 		const Color c = colors[y];
 		for(int x = 0; x < n_bricks_across; ++x) {
 			bricks[index] = Brick (RectF
-			(top_left + Vec2 (x * brick_width, y * brick_height), brick_width, brick_height), c);
+			(brick_top_left + Vec2 (x * brick_width, y * brick_height), brick_width, brick_height), c);
 			++index;
 		}
+	}
+
+	const Vec2 life_top_left (15.0f, 577.5f);
+
+	for(int i = 0; i < max_lives; ++i) {
+		lives[i] = Lives (life_top_left + Vec2 ((paddle_width + 10) * i, 0.0f), paddle_width, paddle_height);
 	}
 }
 
@@ -66,7 +71,6 @@ void Game::Go()
 		UpdateModel (dt);
 		elapsed_time -= dt;
 	}
-	
 	ComposeFrame();
 	gfx.EndFrame();
 }
@@ -78,14 +82,20 @@ void Game::UpdateModel (float dt)
 			game_begin = true;
 		}
 	} else {
-		if(ball.BottomCollision ()) {
+		if(lives_remaining <= 0) {
 			game_over = true;
-			game_started = false;
 		}
+
+		if(game_started && ball.CheckBottomCollision ()) {
+			ball.ZeroVelocity ();
+			game_started = false;
+			--lives_remaining;
+		}
+
 		if(!game_started) {
 			if(wnd.kbd.KeyIsPressed (VK_SPACE)) {
-				ball.StartVelocity ();
 				game_started = true;
+				ball.StartBall ();
 			}
 		}
 
@@ -94,8 +104,8 @@ void Game::UpdateModel (float dt)
 			ball.RidePaddle (Vec2 ((paddle.GetRect ().left + paddle.GetRect ().right) / 2,
 				(paddle.GetRect ().top) - 7.0f));
 		}
+
 		paddle.DoWallCollision (walls);
-		
 		ball.Update (dt);
 
 		bool collision_happened = false;
@@ -122,15 +132,11 @@ void Game::UpdateModel (float dt)
 			bricks[current_collision_index].ExecuteBallCollision (ball);
 			sound_brick.Play ();
 		}
-
 		if(paddle.DoBallCollision (ball)) {
 			sound_pad.Play ();
 		}
-
-
 		if(ball.DoWallCollisions (walls)) {
 			paddle.ResetCooldown ();
-			sound_pad.Play ();
 		}
 	}
 }
@@ -145,6 +151,9 @@ void Game::ComposeFrame()
 			ball.Draw (gfx);
 		}
 		paddle.Draw (gfx);
-		life.Draw (gfx);
+
+		for(int i = 0; i < lives_remaining - 1; ++i) {
+			lives[i].Draw (gfx);
+		}
 	}
 }
