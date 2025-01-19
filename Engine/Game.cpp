@@ -30,7 +30,10 @@ Game::Game (MainWindow& wnd)
 		(paddle.GetRect ().top) - 7.0f), Vec2 (0.0f, 0.0f)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
-	paddle(Vec2(400.0f, 500.0f), paddle_width, paddle_height)
+	paddle(Vec2(400.0f, 500.0f), paddle_width, paddle_height),
+	wall_bricks(RectF(Vec2(0.0f, 0.0f), Vec2(gfx.ScreenWidth, gfx.ScreenHeight)), Color(25, 25, 25)),
+	shadow_bricks (RectF (Vec2 (45.0f, 45.0f), Vec2 (gfx.ScreenWidth - 30, 
+		(brick_height + 5) * (n_bricks_down + 1))), Color(20, 20, 20))
 {
 	
 
@@ -87,7 +90,6 @@ void Game::UpdateModel (float dt)
 		}
 
 		if(game_started && ball.CheckBottomCollision ()) {
-			ball.ZeroVelocity ();
 			game_started = false;
 			--lives_remaining;
 		}
@@ -95,12 +97,14 @@ void Game::UpdateModel (float dt)
 		if(!game_started) {
 			if(wnd.kbd.KeyIsPressed (VK_SPACE)) {
 				game_started = true;
+				sound_pad.Play ();
 				ball.StartBall ();
 			}
 		}
 
 		paddle.Update (wnd.kbd, dt);
 		if(!game_started) {
+			ball.ZeroVelocity ();
 			ball.RidePaddle (Vec2 ((paddle.GetRect ().left + paddle.GetRect ().right) / 2,
 				(paddle.GetRect ().top) - 7.0f));
 		}
@@ -143,15 +147,17 @@ void Game::UpdateModel (float dt)
 
 void Game::ComposeFrame()
 {
+	wall_bricks.Draw (gfx);
+	shadow_bricks.Draw (gfx);
+	paddle.Draw (gfx);
+
 	if(!game_over) {
-		for(const Brick& brick : bricks) {
-			brick.Draw (gfx);
-		}
 		if(game_begin) {
+			for(const Brick& brick : bricks) {
+				brick.Draw (gfx);
+			}
 			ball.Draw (gfx);
 		}
-		paddle.Draw (gfx);
-
 		for(int i = 0; i < lives_remaining - 1; ++i) {
 			lives[i].Draw (gfx);
 		}

@@ -62,6 +62,8 @@ private:
 	int lives_remaining = 3;
 	Lives lives[max_lives];
 	Brick bricks[n_bricks];
+	Brick wall_bricks;
+	Brick shadow_bricks;
 	RectF walls;
 	Sound sound_pad;
 	Sound sound_brick;

@@ -22,7 +22,7 @@ private:
 	static constexpr float wing_width = 15.0f;
 	Color wing_color = Color (255, 105, 0);
 	Color color = Colors::Gray;
-	float speed = 550.0f;
+	float speed = 500.0f;
 	float half_width;
 	float half_height;
 	Vec2 position;

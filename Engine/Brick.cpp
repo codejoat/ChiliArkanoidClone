@@ -27,9 +27,9 @@ void Brick::ExecuteBallCollision (Ball& ball)
 	assert (CheckBallCollision (ball));
 	const Vec2 ball_position = ball.GetPosition ();
 	if(std::signbit (ball.GetVelocity ().x) == std::signbit ((ball_position - GetCenter ()).x)) {
-		ball.ReboundY (0);
+		ball.ReboundY ();
 	} else if(ball_position.x >= rect.left && ball_position.x <= rect.right) {
-		ball.ReboundY (0);
+		ball.ReboundY ();
 	} else {
 		ball.ReboundX ();
 	}

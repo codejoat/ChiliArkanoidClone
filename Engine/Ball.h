@@ -14,7 +14,7 @@ public:
 	void Update (float dt);
 	bool DoWallCollisions (const RectF& walls);
 	void ReboundX ();
-	void ReboundY (int way);
+	void ReboundY ();
 	RectF GetRect () const;
 	Vec2 GetVelocity () const;
 	Vec2 GetPosition () const;
