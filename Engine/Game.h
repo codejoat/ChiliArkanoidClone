@@ -50,23 +50,23 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
-	static constexpr float brick_width = 40.0f;
-	static constexpr float brick_height = 24.0f;
-	static constexpr int n_bricks_across = 18;
+	static constexpr float brick_width = 32.0f;
+	static constexpr float brick_height = 18.0f;
+	static constexpr int n_bricks_across = 13;
 	static constexpr int n_bricks_down = 6;
 	static constexpr int n_bricks = n_bricks_across * n_bricks_down;
 	static constexpr int max_lives = 10;
-	static constexpr float paddle_width = 45.0f;
+	static constexpr float paddle_width = 35.0f;
 	static constexpr float paddle_height = 7.5f;
 	FrameTimer ft;
 	Paddle paddle;
 	Ball ball;
 	MessageSprites msg;
+	SpriteCodex pipe;
 	int lives_remaining = 3;
 	Lives lives[max_lives];
 	Brick bricks[n_bricks];
 	Brick wall_bricks;
-	Brick shadow_bricks;
 	RectF walls;
 	Sound sound_pad;
 	Sound sound_brick;

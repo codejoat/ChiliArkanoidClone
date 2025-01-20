@@ -25,15 +25,13 @@ Game::Game (MainWindow& wnd)
 	:
 	wnd (wnd),
 	gfx (wnd),
-	walls (0.0f, float (gfx.ScreenWidth), 0.0f, float (gfx.ScreenHeight)),
+	walls (190.0f, float (gfx.ScreenWidth - 191.0f), 55.0f, float (gfx.ScreenHeight)),
 	ball (Vec2 ((paddle.GetRect ().left + paddle.GetRect ().right) / 2,
 		(paddle.GetRect ().top) - 7.0f), Vec2 (0.0f, 0.0f)),
 	sound_pad (L"Sounds\\arkpad.wav"),
 	sound_brick(L"Sounds\\arkbrick.wav"),
-	paddle(Vec2(400.0f, 500.0f), paddle_width, paddle_height),
-	wall_bricks(RectF(Vec2(0.0f, 0.0f), Vec2(gfx.ScreenWidth, gfx.ScreenHeight)), Color(25, 25, 25)),
-	shadow_bricks (RectF (Vec2 (45.0f, 45.0f), Vec2 (gfx.ScreenWidth - 30, 
-		(brick_height + 5) * (n_bricks_down + 1))), Color(20, 20, 20))
+	paddle(Vec2(400.0f, 550.0f), paddle_width, paddle_height),
+	wall_bricks(RectF(Vec2(175.0f, 55.0f), Vec2(gfx.ScreenWidth - 175.0f, gfx.ScreenHeight)), Color(11, 11, 76))
 {
 	
 
@@ -46,7 +44,7 @@ Game::Game (MainWindow& wnd)
 		Colors::Green
 	};
 
-	const Vec2 brick_top_left (40.0f, 40.0f);
+	const Vec2 brick_top_left (192.0f, 140.0f);
 
 	int index = 0;
 	for(int y = 0; y < n_bricks_down; ++y) {
@@ -58,10 +56,10 @@ Game::Game (MainWindow& wnd)
 		}
 	}
 
-	const Vec2 life_top_left (15.0f, 577.5f);
+	const Vec2 life_top_left (192.0f, 582.5f);
 
 	for(int i = 0; i < max_lives; ++i) {
-		lives[i] = Lives (life_top_left + Vec2 ((paddle_width + 10) * i, 0.0f), paddle_width, paddle_height);
+		lives[i] = Lives (life_top_left + Vec2 ((paddle_width) * i, 0.0f), paddle_width - 10, paddle_height);
 	}
 }
 
@@ -148,7 +146,6 @@ void Game::UpdateModel (float dt)
 void Game::ComposeFrame()
 {
 	wall_bricks.Draw (gfx);
-	shadow_bricks.Draw (gfx);
 	paddle.Draw (gfx);
 	
 	if(!game_started && !game_begin) {
@@ -168,4 +165,12 @@ void Game::ComposeFrame()
 	} else {
 		msg.DrawGameOver (gfx);
 	}
+
+	for(int i = 1; i <= 11; ++i) {
+		pipe.DrawWallPipe (Vec2 (177, gfx.ScreenHeight - (i * 46)), gfx);
+	}
+	for(int i = 1; i <= 11; ++i) {
+		pipe.DrawWallPipe (Vec2 (gfx.ScreenWidth - 191, gfx.ScreenHeight - (i * 46)), gfx);
+	}
+	
 }

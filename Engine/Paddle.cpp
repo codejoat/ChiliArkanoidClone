@@ -12,6 +12,9 @@ Paddle::Paddle (const Vec2& set_position, float set_half_width, float set_half_h
 void Paddle::Draw (Graphics& gfx) const
 {
    RectF rect = GetRect ();
+   gfx.DrawRect (rect, tip_color);
+   rect.left += tip_width;
+   rect.right -= tip_width;
    gfx.DrawRect (rect, wing_color);
    rect.left += wing_width;
    rect.right -= wing_width;

@@ -19,8 +19,10 @@ public:
 	void ResetCooldown ();
 
 private:
-	static constexpr float wing_width = 15.0f;
+	static constexpr float wing_width = 10.0f;
+	static constexpr float tip_width = 2.0f;
 	Color wing_color = Color (255, 105, 0);
+	Color tip_color = Colors::Gray;
 	Color color = Colors::Gray;
 	float speed = 500.0f;
 	float half_width;
