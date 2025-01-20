@@ -80,7 +80,7 @@ void Ball::RidePaddle (const Vec2& set_position)
 void Ball::StartBall ()
 {
 	bottom_collision = false;
-	velocity = Vec2 (250.0f, -250.0f);
+	velocity = Vec2 (350.0f, -350.0f);
 }
 
 void Ball::ZeroVelocity ()

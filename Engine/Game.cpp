@@ -132,6 +132,7 @@ void Game::UpdateModel (float dt)
 		if(collision_happened) {
 			paddle.ResetCooldown ();
 			bricks[current_collision_index].ExecuteBallCollision (ball);
+			points += 50;
 			sound_brick.Play ();
 		}
 		if(paddle.DoBallCollision (ball)) {
@@ -139,6 +140,11 @@ void Game::UpdateModel (float dt)
 		}
 		if(ball.DoWallCollisions (walls)) {
 			paddle.ResetCooldown ();
+		}
+
+		if(points == 1000) {
+			++lives_remaining;
+			points = 0;
 		}
 	}
 }

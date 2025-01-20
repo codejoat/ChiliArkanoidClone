@@ -64,6 +64,7 @@ private:
 	MessageSprites msg;
 	SpriteCodex pipe;
 	int lives_remaining = 3;
+	int points = 0;
 	Lives lives[max_lives];
 	Brick bricks[n_bricks];
 	Brick wall_bricks;

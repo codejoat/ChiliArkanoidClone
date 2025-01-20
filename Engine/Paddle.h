@@ -24,7 +24,7 @@ private:
 	Color wing_color = Color (255, 105, 0);
 	Color tip_color = Colors::Gray;
 	Color color = Colors::Gray;
-	float speed = 500.0f;
+	float speed = 700.0f;
 	float half_width;
 	float half_height;
 	Vec2 position;
