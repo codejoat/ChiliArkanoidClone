@@ -162,4 +162,5 @@ void Game::ComposeFrame()
 			lives[i].Draw (gfx);
 		}
 	}
+	SpriteCodex::Draw_9 (Vec2 (380.0f, 284.0f), gfx, 4, Colors::Cyan);
 }

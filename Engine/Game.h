@@ -29,6 +29,7 @@
 #include "Brick.h"
 #include "Paddle.h"
 #include "Lives.h"
+#include "SpriteCodex.h"
 
 class Game
 {

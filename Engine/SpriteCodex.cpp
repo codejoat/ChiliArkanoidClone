@@ -1,4 +1,21 @@
+// Letter building format
+/*************************************************************************************************
+
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * ?; y < top_left_y + font_size * ?; ++y) {
+		for(int x = top_left_x + font_size * ?; x < top_left_x + font_size * ?; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+
+*************************************************************************************************/
+
 #include "SpriteCodex.h"
+
+int SpriteCodex::font_size = 0;
 
 void SpriteCodex::DrawBall( const Vec2& topLeft,Graphics& gfx )
 {
@@ -154,3 +171,1134 @@ void SpriteCodex::DrawBall( const Vec2& topLeft,Graphics& gfx )
 	gfx.PutPixel(7 + x, 13 + y, 48, 48, 48);
 	gfx.PutPixel(8 + x, 13 + y, 48, 48, 48);	
 }
+
+void SpriteCodex::Draw_A (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+	
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_B (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_C (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_D (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_E (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_F (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_G (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_H (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_I (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_J (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_K (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_L (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_M (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 4; x < top_left_x + font_size * 5; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_N (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_O (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_P (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_Q (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_R (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_S (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_T (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_U (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_V (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 4; x < top_left_x + font_size * 5; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_W (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 4; x < top_left_x + font_size * 5; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_X (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_Y (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 4; x < top_left_x + font_size * 5; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_Z (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_0 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	// Special 0 case to differentiate from O
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_1 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_2 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 2 ; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_3 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_4 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_5 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_6 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_7 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_8 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_9 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 1; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 2; y < top_left_y + font_size * 3; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 4; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 2; x < top_left_x + font_size * 3; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
+void SpriteCodex::Draw_Short_Space (const Vec2& top_left, Graphics& gfx, int size_mod, Color c, bool block)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
+			if(block) {
+				gfx.PutPixel (x, y, c);
+			}		
+		}
+	}
+}
+
+void SpriteCodex::Draw_Full_Space (const Vec2& top_left, Graphics& gfx, int size_mod, Color c, bool block)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 5; ++y) {
+		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 4; ++x) {
+			if(block) {
+				gfx.PutPixel (x, y, c);
+			}
+		}
+	}
+}
+
