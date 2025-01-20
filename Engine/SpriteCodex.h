@@ -47,6 +47,7 @@ public:
 	static void Draw_7 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c);
 	static void Draw_8 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c);
 	static void Draw_9 (const Vec2& top_left, Graphics& gfx, int size_mod, Color c);
+	static void Draw_Colon (const Vec2& top_left, Graphics& gfx, int size_mod, Color c);
 	static void Draw_Short_Space (const Vec2& top_left, Graphics& gfx, int size_mod, Color c, bool block);
 	static void Draw_Full_Space (const Vec2& top_left, Graphics& gfx, int size_mod, Color c, bool block);
 

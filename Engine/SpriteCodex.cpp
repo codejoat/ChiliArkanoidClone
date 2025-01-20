@@ -1836,6 +1836,24 @@ void SpriteCodex::Draw_9 (const Vec2& top_left, Graphics& gfx, int size_mod, Col
 	}
 }
 
+void SpriteCodex::Draw_Colon (const Vec2& top_left, Graphics& gfx, int size_mod, Color c)
+{
+	font_size = pixel_size * size_mod;
+	const int top_left_x = int (top_left.x);
+	const int top_left_y = int (top_left.y);
+
+	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 2; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+	for(int y = top_left_y + font_size * 3; y < top_left_y + font_size * 4; ++y) {
+		for(int x = top_left_x + font_size * 1; x < top_left_x + font_size * 2; ++x) {
+			gfx.PutPixel (x, y, c);
+		}
+	}
+}
+
 void SpriteCodex::Draw_Short_Space (const Vec2& top_left, Graphics& gfx, int size_mod, Color c, bool block)
 {
 	font_size = pixel_size * size_mod;

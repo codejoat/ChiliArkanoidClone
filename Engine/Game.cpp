@@ -153,6 +153,7 @@ void Game::ComposeFrame()
 {
 	wall_bricks.Draw (gfx);
 	paddle.Draw (gfx);
+	msg.DrawScore (gfx);
 	
 	if(!game_started && !game_begin) {
 		msg.DrawPressEnter (gfx);
