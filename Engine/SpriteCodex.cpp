@@ -1,4 +1,4 @@
-// Letter building format
+// Letter building format // The '?' refers to placement of eact block
 /*************************************************************************************************
 
 	font_size = pixel_size * size_mod;

@@ -150,7 +150,11 @@ void Game::ComposeFrame()
 	wall_bricks.Draw (gfx);
 	shadow_bricks.Draw (gfx);
 	paddle.Draw (gfx);
-
+	
+	if(!game_started && !game_begin) {
+		msg.DrawPressEnter (gfx);
+	}
+	
 	if(!game_over) {
 		if(game_begin) {
 			for(const Brick& brick : bricks) {
@@ -161,6 +165,7 @@ void Game::ComposeFrame()
 		for(int i = 0; i < lives_remaining - 1; ++i) {
 			lives[i].Draw (gfx);
 		}
+	} else {
+		msg.DrawGameOver (gfx);
 	}
-	SpriteCodex::Draw_9 (Vec2 (380.0f, 284.0f), gfx, 4, Colors::Cyan);
 }

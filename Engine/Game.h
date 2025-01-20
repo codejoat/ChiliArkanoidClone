@@ -30,6 +30,7 @@
 #include "Paddle.h"
 #include "Lives.h"
 #include "SpriteCodex.h"
+#include "MessageSprites.h"
 
 class Game
 {
@@ -60,6 +61,7 @@ private:
 	FrameTimer ft;
 	Paddle paddle;
 	Ball ball;
+	MessageSprites msg;
 	int lives_remaining = 3;
 	Lives lives[max_lives];
 	Brick bricks[n_bricks];
