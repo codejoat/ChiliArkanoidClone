@@ -25,7 +25,7 @@ Game::Game (MainWindow& wnd)
 	:
 	wnd (wnd),
 	gfx (wnd),
-	walls (190.0f, float (gfx.ScreenWidth - 191.0f), 55.0f, float (gfx.ScreenHeight)),
+	walls (188.0f, float (gfx.ScreenWidth - 188.0f), 67.0f, float (gfx.ScreenHeight)),
 	ball (Vec2 ((paddle.GetRect ().left + paddle.GetRect ().right) / 2,
 		(paddle.GetRect ().top) - 7.0f), Vec2 (0.0f, 0.0f)),
 	sound_pad (L"Sounds\\arkpad.wav"),
@@ -173,11 +173,15 @@ void Game::ComposeFrame()
 		msg.DrawGameOver (gfx);
 	}
 
-	for(int i = 1; i <= 11; ++i) {
-		pipe.DrawWallPipe (Vec2 (177, gfx.ScreenHeight - (i * 46)), gfx);
+	for(int i = 1; i < 13; ++i) {
+		pipe.DrawWallPipe (Vec2 (177.0f, gfx.ScreenHeight - (i * 44)), gfx);
 	}
-	for(int i = 1; i <= 11; ++i) {
-		pipe.DrawWallPipe (Vec2 (gfx.ScreenWidth - 191, gfx.ScreenHeight - (i * 46)), gfx);
+	for(int i = 1; i < 13; ++i) {
+		pipe.DrawWallPipe (Vec2 (609.0f, gfx.ScreenHeight - (i * 44)), gfx);
 	}
-	
+	pipe.DrawLeftCorner (Vec2 (177.0f, 72.0f), gfx);
+	pipe.DrawRightCorner (Vec2 (622.0f, 72.0f), gfx);
+	pipe.DrawStraightPipe (Vec2 (194.0f, 58.0f), gfx, 412);
+	pipe.DrawSidewaysCylinder (Vec2 (277.0f, 56.0f), gfx);
+	pipe.DrawSidewaysCylinder (Vec2 (482.0f, 56.0f), gfx);
 }

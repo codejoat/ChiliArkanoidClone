@@ -10,6 +10,10 @@ public:
 	// centered drawing of 14x14 sprite
 	static void DrawBall( const Vec2& center,Graphics& gfx );
 	static void DrawWallPipe (const Vec2& top_left, Graphics& gfx);
+	static void DrawLeftCorner (const Vec2& top_left, Graphics& gfx);
+	static void DrawRightCorner (const Vec2& top_left, Graphics& gfx);
+	static void DrawStraightPipe (const Vec2& top_left, Graphics& gfx, const int length);
+	static void DrawSidewaysCylinder (const Vec2& top_left, Graphics& gfx);
 
 	static void Draw_A (const Vec2& top_left, Graphics& gfx, int size_mod, Color c);
 	static void Draw_B (const Vec2& top_left, Graphics& gfx, int size_mod, Color c);
