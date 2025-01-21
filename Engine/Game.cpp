@@ -150,6 +150,16 @@ void Game::UpdateModel (float dt)
 		} else if(_1up_counter == 200) {
 			_1up_awarded = false;
 		}
+
+		bool player_wins = true;
+		for(int i = 0; i < n_bricks; ++i) {
+			if(!bricks[i].GetDestroyed ()) {
+				player_wins = false;
+				break;
+			}
+		}
+
+		show_win = player_wins;
 	}
 }
 
@@ -163,7 +173,7 @@ void Game::ComposeFrame()
 		msg_sprites.DrawPressEnter (gfx);
 	}
 	
-	if(!game_over) {
+	if(!game_over && !show_win) {
 		if(game_begin) {
 			for(const Brick& brick : bricks) {
 				brick.Draw (gfx);
@@ -174,7 +184,11 @@ void Game::ComposeFrame()
 			lives[i].Draw (gfx);
 		}
 	} else {
-		msg_sprites.DrawGameOver (gfx);
+		if(!show_win) {
+			msg_sprites.DrawGameOver (gfx);
+		} else {
+			msg_sprites.DrawYouWin (gfx);
+		}
 	}
 
 	for(int i = 1; i < 13; ++i) {

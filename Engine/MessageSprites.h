@@ -13,10 +13,11 @@ public:
 	void DrawScore (Graphics& gfx, const int score) const;
 	void ConvertNumbersToSprites (Graphics& gfx, const float x_position, const int number) const;
 	void Draw1Up (Graphics& gfx) const;
+	void DrawYouWin (Graphics& gfx) const;
 
 private:
 	SpriteCodex ch;
-	static constexpr float left_digit = 301.0f;
+	static constexpr float score_start_position = 307.0f;
 	static constexpr float digit_displacement = 20.0f;
 };
 

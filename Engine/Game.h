@@ -66,6 +66,7 @@ private:
 	int lives_remaining = 3;
 	int _1up_counter = 0;
 	bool _1up_awarded = false;
+	bool show_win = false;
 	int score = 0;
 	Lives lives[max_lives];
 	Brick bricks[n_bricks];

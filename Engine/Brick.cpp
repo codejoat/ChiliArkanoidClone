@@ -40,3 +40,8 @@ Vec2 Brick::GetCenter () const
 {
 	return rect.GetCenter();
 }
+
+bool Brick::GetDestroyed () const
+{
+	return destroyed;
+}
