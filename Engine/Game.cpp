@@ -132,7 +132,8 @@ void Game::UpdateModel (float dt)
 		if(collision_happened) {
 			paddle.ResetCooldown ();
 			bricks[current_collision_index].ExecuteBallCollision (ball);
-			points += 50;
+			_1up_counter += 50;
+			score += 50;
 			sound_brick.Play ();
 		}
 		if(paddle.DoBallCollision (ball)) {
@@ -142,9 +143,12 @@ void Game::UpdateModel (float dt)
 			paddle.ResetCooldown ();
 		}
 
-		if(points == 1000) {
+		if(_1up_counter == 1000) {
 			++lives_remaining;
-			points = 0;
+			_1up_awarded = true;
+			_1up_counter = 0;
+		} else if(_1up_counter == 200) {
+			_1up_awarded = false;
 		}
 	}
 }
@@ -153,10 +157,10 @@ void Game::ComposeFrame()
 {
 	wall_bricks.Draw (gfx);
 	paddle.Draw (gfx);
-	msg.DrawScore (gfx);
+	msg_sprites.DrawScore (gfx, score);
 	
 	if(!game_started && !game_begin) {
-		msg.DrawPressEnter (gfx);
+		msg_sprites.DrawPressEnter (gfx);
 	}
 	
 	if(!game_over) {
@@ -170,18 +174,23 @@ void Game::ComposeFrame()
 			lives[i].Draw (gfx);
 		}
 	} else {
-		msg.DrawGameOver (gfx);
+		msg_sprites.DrawGameOver (gfx);
 	}
 
 	for(int i = 1; i < 13; ++i) {
-		pipe.DrawWallPipe (Vec2 (177.0f, gfx.ScreenHeight - (i * 44)), gfx);
+		pipe.DrawWallPipe (Vec2 (177.0f, gfx.ScreenHeight - (i * 44.0f)), gfx);
 	}
 	for(int i = 1; i < 13; ++i) {
-		pipe.DrawWallPipe (Vec2 (609.0f, gfx.ScreenHeight - (i * 44)), gfx);
+		pipe.DrawWallPipe (Vec2 (609.0f, gfx.ScreenHeight - (i * 44.0f)), gfx);
 	}
+
 	pipe.DrawLeftCorner (Vec2 (177.0f, 72.0f), gfx);
 	pipe.DrawRightCorner (Vec2 (622.0f, 72.0f), gfx);
 	pipe.DrawStraightPipe (Vec2 (194.0f, 58.0f), gfx, 412);
 	pipe.DrawSidewaysCylinder (Vec2 (277.0f, 56.0f), gfx);
 	pipe.DrawSidewaysCylinder (Vec2 (482.0f, 56.0f), gfx);
+	
+	if(_1up_awarded) {
+		msg_sprites.Draw1Up (gfx);
+	}
 }

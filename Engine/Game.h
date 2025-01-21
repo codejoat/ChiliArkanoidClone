@@ -61,10 +61,12 @@ private:
 	FrameTimer ft;
 	Paddle paddle;
 	Ball ball;
-	MessageSprites msg;
+	MessageSprites msg_sprites;
 	SpriteCodex pipe;
 	int lives_remaining = 3;
-	int points = 0;
+	int _1up_counter = 0;
+	bool _1up_awarded = false;
+	int score = 0;
 	Lives lives[max_lives];
 	Brick bricks[n_bricks];
 	Brick wall_bricks;

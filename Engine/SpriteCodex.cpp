@@ -2137,7 +2137,7 @@ void SpriteCodex::Draw_U (const Vec2& top_left, Graphics& gfx, int size_mod, Col
 	const int top_left_x = int (top_left.x);
 	const int top_left_y = int (top_left.y);
 
-	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 4; ++y) {
 		for(int x = top_left_x + font_size * 0; x < top_left_x + font_size * 1; ++x) {
 			gfx.PutPixel (x, y, c);
 		}
@@ -2147,7 +2147,7 @@ void SpriteCodex::Draw_U (const Vec2& top_left, Graphics& gfx, int size_mod, Col
 			gfx.PutPixel (x, y, c);
 		}
 	}
-	for(int y = top_left_y + font_size * 1; y < top_left_y + font_size * 4; ++y) {
+	for(int y = top_left_y + font_size * 0; y < top_left_y + font_size * 4; ++y) {
 		for(int x = top_left_x + font_size * 3; x < top_left_x + font_size * 4; ++x) {
 			gfx.PutPixel (x, y, c);
 		}
